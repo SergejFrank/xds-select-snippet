@@ -168,28 +168,48 @@ function generateXdsSelect(elem) {
 
     //navigate through xds-select
     window.addEventListener('keydown', function (e) {
-        if (xds.wrapper.classList.contains(defaultParams.open)){
+        var open = xds.wrapper.classList.contains(defaultParams.open);
+        var active = xds.button === document.activeElement;
+
+        var Key = {
+            ENTER: 13,
+            ESCAPE: 27,
+            SPACE: 32,
+            LEFT: 37,
+            UP: 38,
+            RIGHT: 39,
+            DOWN: 40,
+        }
+
+        if (open || active){
 
             switch (e.keyCode) {
-                case 27:
+                case Key.ESCAPE:
                     // On "Escape" closes the panel
                     xds.close();
                     break;
-                case 13:
-                case 32:
+                case Key.ENTER:
+                case Key.SPACE:
                     // On "Enter" or "Space" selects the focused element as the selected one
                     xds.selectFocused();
                     break;
-                case 38:
-                    // On "Arrow up" set focus to the prev option if present
+
+                case Key.LEFT:
+                case Key.UP:
+                    // On "Arrow up"  or "Arrow left" set focus to the prev option if present
                     xds.moveFocuesedElement(-1);
                     break;
-                case 40:
-                    // On "Arrow down" set focus to the next option if present
+                case Key.RIGHT:
+                case Key.DOWN:
+                    // On "Arrow down" or "Arrow right" set focus to the next option if present
                     xds.moveFocuesedElement(+1);
                     break;
             }
 
+            //select focues element if xds-select is closed
+            if(!open && active){
+                xds.selectFocused();
+            }
         };
     });
 
