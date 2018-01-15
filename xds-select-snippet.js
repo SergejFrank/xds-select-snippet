@@ -184,7 +184,7 @@ function generateXdsSelect(elem) {
         if (open || active){
 
             switch (e.keyCode) {
-                case Key.ESCAPE:
+                    case Key.ESCAPE:
                     // On "Escape" closes the panel
                     xds.close();
                     break;
@@ -222,8 +222,12 @@ function generateXdsSelect(elem) {
     return xds;
 }
 
-var selects = document.querySelectorAll(".select");
 
-for (var j = 0; j < selects.length; j++) {
-    generateXdsSelect(selects[j]);
-}
+
+document.addEventListener('DOMContentLoaded', function(){
+    var selects = document.querySelectorAll(".select");
+
+    for (var j = 0; j < selects.length; j++) {
+        generateXdsSelect(selects[j]);
+    }
+}, false);
