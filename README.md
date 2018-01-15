@@ -9,7 +9,6 @@ No dependencies needed.
 
 
 ## How it works
-Start with a simple HTML `<select>`:
 
 In HTML with the `script` tag:
 ```html
@@ -22,6 +21,7 @@ In HTML with the `link` tag:
 <link rel="stylesheet" href="xds-select-snippet.css" type="text/css" >
 ```
 
+Start with a simple HTML `<select>`:
 ```html
 <select id="mySelect">
   <option value>Select...</option>
@@ -30,6 +30,7 @@ In HTML with the `link` tag:
 </select>
 ```
 
+In HTML with the `script` tag:
 ```js
 var selects = document.querySelectorAll(".select");
 

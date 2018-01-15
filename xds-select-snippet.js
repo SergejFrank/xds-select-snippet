@@ -221,13 +221,3 @@ function generateXdsSelect(elem) {
 
     return xds;
 }
-
-
-
-document.addEventListener('DOMContentLoaded', function(){
-    var selects = document.querySelectorAll(".select");
-
-    for (var j = 0; j < selects.length; j++) {
-        generateXdsSelect(selects[j]);
-    }
-}, false);

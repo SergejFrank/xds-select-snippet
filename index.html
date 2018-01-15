@@ -83,6 +83,15 @@
         <option selected value="o7">Select object 7</option>
     </select>
 
+
+    <script>
+        var selects = document.querySelectorAll(".select");
+
+        for (var j = 0; j < selects.length; j++) {
+            generateXdsSelect(selects[j]);
+        }
+    </script>
+
     </body>
 
 </html>
